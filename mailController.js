@@ -24,7 +24,7 @@ exports.sendMail = async (req, res) => {
             to: process.env.MY_EMAIL,
             subject: `Portfolio Message - ${user.name}`,
             text: user.message,
-            html: `<p>${user.email}<p><br/><p>${user.message}</p>`
+            html: `<p>Name: ${user.name}</p><br/><p>Email: ${user.email}<p><br/><p>${user.message}</p>`
         })
 
         return res.sendStatus(200)
