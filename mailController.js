@@ -20,11 +20,11 @@ exports.sendMail = async (req, res) => {
         const user = req.body
 
         await transport.sendMail({
-            from: `${user.name} <${user.email}>`,
+            from: `${user.name} <mailtrap@serbandeaconu.com>`,
             to: process.env.MY_EMAIL,
             subject: `Portfolio Message - ${user.name}`,
             text: user.message,
-            html: `<p>${user.message}</p>`
+            html: `<p>${user.email}<p><br/><p>${user.message}</p>`
         })
 
         return res.sendStatus(200)
