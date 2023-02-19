@@ -28,7 +28,8 @@ exports.sendMail = async (req, res) => {
         })
 
         return res.sendStatus(200)
-    } catch {
+    } catch (err) {
+        console.log(err.message)
         return res.sendStatus(500)
     }
 } 
