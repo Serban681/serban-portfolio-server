@@ -18,6 +18,8 @@ exports.sendMail = async (req, res) => {
             return res.sendStatus(400)
 
         const user = req.body
+        
+        console.log(user)
 
         await transport.sendMail({
             from: `${user.name} <mailtrap@serbandeaconu.com>`,
