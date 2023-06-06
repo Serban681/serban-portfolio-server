@@ -11,7 +11,9 @@ const port = process.env.PORT || 7000
 app.use(express.json())
 
 app.use(cors({
-    origin: "*"
+    headers: {
+        'Access-Control-Allow-Origin': '*'
+    }
 }))
 
 app.listen(port, () => {
